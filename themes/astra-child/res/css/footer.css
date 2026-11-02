@@ -1,0 +1,27 @@
+/* Footer links style adjustments*/
+
+#nav_menu-7 ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.gc-footer--link-header {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: unset;
+    margin-bottom: 40px;
+}
+
+#menu-footer-useful-links,
+#menu-footer-services {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#menu-footer-useful-links .menu-item,
+#menu-footer-services .menu-item{
+    line-height: 1.8em;
+}

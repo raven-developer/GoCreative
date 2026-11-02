@@ -1,0 +1,16 @@
+/* Site Navigation style adjustments */
+
+.site-navigation > .main-navigation {
+    padding: 6px;
+    background-color: rgba(240, 239, 231, 0.05);
+    border-radius: 10px;
+}
+
+.site-navigation .current_page_item > a.menu-link[aria-current="page"] {
+    color: var(--ast-global-color-0);
+}
+
+.site-navigation .menu-item {
+    border-radius: 4px;
+    overflow: hidden;
+}
