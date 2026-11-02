@@ -35,6 +35,7 @@ function gc_file_version( $file_path ) {
  */
 function child_enqueue_styles() {
 
+	// Enqueue Child Theme Stylesheet After the Parent Theme Stylesheet
 	wp_enqueue_style(
 		'astra-child-theme',
 		get_stylesheet_directory_uri() . '/style.css',
@@ -43,6 +44,7 @@ function child_enqueue_styles() {
 		'all'
 	);
 
+	// Enqueue Custom Stylesheets After the Child Theme Stylesheet
 	wp_enqueue_style(
 		'astra-child-custom',
 		CHILD_THEME_STYLE_PATH . '/main-style.css',
@@ -51,6 +53,7 @@ function child_enqueue_styles() {
 		'all'
 	);
 
+	// Enqueue Header and Footer Stylesheets After the Custom Stylesheet
 	wp_enqueue_style(
 		'astra-header-custom-style',
 		CHILD_THEME_STYLE_PATH . '/header.css',
