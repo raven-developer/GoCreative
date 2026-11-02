@@ -20,14 +20,16 @@
 # Configuration
 wp-config.php
 
-# Example themes
-/wp-content/themes/twenty*/
+# Themes
+/wp-content/themes/twentytwentyfive/
+/wp-content/themes/twentytwentyfour/
+/wp-content/themes/twentytwentythree/
 
 # Example plugin
 /wp-content/plugins/hello.php
 
 # Uploads
-/wp-content/uploads/
+#/wp-content/uploads/
 
 # Log files
 *.log
