@@ -1,0 +1,14 @@
+/** =====================
+ * Font Styles
+ =======================*/
+
+.gc-section__header {
+    color: var(--gc-color--header);
+    line-height: 1.15em;
+    font-family: var(--gc-font--header);
+    font-weight: 700;
+}
+
+.gc-text--align-center {
+    text-align: center;
+}

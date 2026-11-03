@@ -69,6 +69,42 @@ function child_enqueue_styles() {
 		gc_file_version( CHILD_THEME_STYLE_DIR . '/footer.css' ),
 		'all'
 	);
+
+	// Enqueue Root Stylesheet
+	wp_enqueue_style(
+		'astra-root-custom-style',
+		CHILD_THEME_STYLE_PATH . '/root.css',
+		array( 'astra-theme-css' ),
+		gc_file_version( CHILD_THEME_STYLE_DIR . '/root.css' ),
+		'all'
+	);
+
+	// Enqueue Font Stylesheet
+	wp_enqueue_style(
+		'astra-fontstyle-custom-style',
+		CHILD_THEME_STYLE_PATH . '/fontstyle.css',
+		array( 'astra-root-custom-style' ),
+		gc_file_version( CHILD_THEME_STYLE_DIR . '/fontstyle.css' ),
+		'all'
+	);
+
+	// Enqueue Font Stylesheet
+	wp_enqueue_style(
+		'astra-button-custom-style',
+		CHILD_THEME_STYLE_PATH . '/buttons.css',
+		array( 'astra-root-custom-style' ),
+		gc_file_version( CHILD_THEME_STYLE_DIR . '/buttons.css' ),
+		'all'
+	);
+
+	// Enqueue Hero Banner Stylesheet
+	wp_enqueue_style(
+		'astra-herobanner-custom-style',
+		CHILD_THEME_STYLE_PATH . '/style-herobanner.css',
+		array( 'astra-root-custom-style' ),
+		gc_file_version( CHILD_THEME_STYLE_DIR . '/style-herobanner.css' ),
+		'all'
+	);
 }
 
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );

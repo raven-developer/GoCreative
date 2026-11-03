@@ -25,3 +25,14 @@
 #menu-footer-services .menu-item{
     line-height: 1.8em;
 }
+
+@media (min-width: 768px) {
+    footer .site-primary-footer-wrap > * {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+footer .site-primary-footer-wrap > *{
+    padding-inline: 1rem;
+}

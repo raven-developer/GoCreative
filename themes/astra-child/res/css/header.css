@@ -6,6 +6,21 @@
     border-radius: 10px;
 }
 
+.site-primary-header-wrap {
+    padding: 0 !important;
+}
+
+@media (min-width: 768px) {
+    header .main-header-bar-wrap {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+header .main-header-bar-wrap {
+    padding-inline: 1rem;
+}
+
 .site-navigation .current_page_item > a.menu-link[aria-current="page"] {
     color: var(--ast-global-color-0);
 }
@@ -13,4 +28,14 @@
 .site-navigation .menu-item {
     border-radius: 4px;
     overflow: hidden;
+}
+
+.site-navigation .menu-item.current_page_item {
+    background: #F0EFE70D;
+}
+
+.site-header {
+    position: absolute;
+    inset: 0;
+    height: max-content;
 }

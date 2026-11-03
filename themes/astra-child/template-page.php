@@ -16,6 +16,23 @@ get_header();
  */
 ?>
 
+<?php if ( have_rows( 'contents' ) ) : ?>
+	<?php while ( have_rows( 'contents' ) ) : the_row();
+
+		$opt_general          = get_sub_field( 'option_general_settings' );
+		$opt_template         = sanitize_key( get_sub_field( 'option_select_template' ) );
+
+        $opt_enable_section   = isset( $opt_general['option_enable_section'] ) ? $opt_general['option_enable_section'] : false;
+
+		if ( empty( $opt_enable_section ) || ! $opt_enable_section ) {
+			continue;
+		}
+
+		get_template_part( 'template-parts/sections/section_' . $opt_template );
+
+	endwhile; ?>
+<?php endif; ?>
+
 <?php
 
 /**

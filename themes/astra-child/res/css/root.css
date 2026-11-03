@@ -1,0 +1,20 @@
+:root {
+    --gc-color--primary: #a7e203;
+    --gc-color--black: #12161b;
+    --gc-color--dgreen: #172b24;
+    --gc-color--white: #f0efe7;
+
+    --ast-global-color-5: #f5f5f5;
+    --ast-global-color-7: #cfd3d9;
+
+    --gc-color--paragraph: #575e4a;
+    --gc-color--header: var(--gc-color--black);
+    --gc-color--link: var(--gc-color--primary);
+    --gc-color--link-hover: #faffee;
+
+    --gc-color--bg-white: var(--gc-color--white);
+    --gc-color--bg-black: var(--gc-color--dgreen);
+
+    --gc-font--header: 'Syne', sans-serif;
+    --gc-font--paragraph: 'Figtree',sans-serif;
+}
