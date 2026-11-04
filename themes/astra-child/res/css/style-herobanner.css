@@ -8,11 +8,12 @@
     padding-block: 180px 140px;
 }
 
-
 .gc-section--hero-banner .gc-section--image-block {
     position: absolute;
     inset: 0;
     z-index: -1;
+    height: 100%;
+    width: 100%;
 }
 
 .gc-section--hero-banner .gc-section__image--hero-banner {
@@ -33,5 +34,24 @@
     .gc-width--full .gc-section--inner-container {
         max-width: 90%;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .gc-section--hero-banner {
+        padding-block: 64px;
+    }
+
+    .gc-section--buttons-block {
+        justify-content: space-between;
+    }
+
+    .gc-section--buttons-block > .gc-button {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .gc-section--hero-banner .gc-section__image--hero-banner {
+        object-position: left center;
     }
 }

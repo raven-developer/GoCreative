@@ -1,6 +1,7 @@
 /** =====================
  * GENERAL CONTAINERS
  =======================*/
+
 .gc-height--full {
     height: 100dvh;
     max-height: 1080px;
