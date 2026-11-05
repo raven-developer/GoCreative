@@ -12,13 +12,6 @@ $opt_content = get_sub_field( 'option_section_content' );
 // Get the values of the general settings
 $opt_extra_classes = ! empty( $opt_general['option_extra_classes'] ) ? $opt_general['option_extra_classes'] : '';
 
-/**
- * Full Height Page Banner always outputs an H1, so the Header Level setting is not used here.
- * 
- * $opt_header_level  = ! empty( $opt_general['option_header_level'] ) ? $opt_general['option_header_level'] : 'h2';
- * $opt_header_level  = in_array( $opt_header_level, array( 'h2', 'h3' ), true ) ? $opt_header_level : 'h2';
- */
-
 $opt_header_level = 'h1'; // Always use H1 for the hero banner heading
 
 // Get the values of the content settings
@@ -30,22 +23,19 @@ $opt_add_image   = ! empty( $opt_content['option_add_image'] );
 $sec_image       = $opt_add_image && ! empty( $opt_content['section_image'] ) ? $opt_content['section_image'] : null;
 
 $opt_heading_id = 'hero-banner-heading-' . get_row_index();
-$opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-width--full gc-flex' . $opt_extra_classes );
+$opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-width--full gc-flex ' . $opt_extra_classes );
 ?>
-
-<?php /* Temporary: remove once layouting is done */ ?>
 
 <section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?>>
 	<div class="gc-con--inner">
-		<?php if ( !empty( $sec_header ) ): ?>
+		<?php if ( ! empty( $sec_header ) ): ?>
 		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-pos--bottom gc-width--half gc-flex gc-color--white">
 			<div class="gc-wrap--inner">
 				<div class="gc-content gc-content--header gc-flex">
 					<div class="gc-content--container">
-						<<?php echo $opt_header_level; ?> id="<?php echo esc_attr( $opt_heading_id ); ?>" class="gc-header--title gc-size--xl">
+						<<?php echo tag_escape($opt_header_level); ?> id="<?php echo esc_attr( $opt_heading_id ); ?>" class="gc-header--title gc-size--xl">
 							<?php echo esc_html( $sec_header ); ?>
-						</<?php echo $opt_header_level; ?>>
-				
+						</<?php echo tag_escape($opt_header_level); ?>>
 					</div>
 				</div>
 
@@ -93,15 +83,15 @@ $opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-w
 					<div class="gc-content--container">
 						<?php
 						echo wp_get_attachment_image(
-								$sec_image['ID'],
-								'full',
-								false,
-								array(
-									'alt'           => '',
-									'class'         => 'gc-image  gc-image__hero-banner',
-									'fetchpriority' => 'high',
-								)
-							);
+							$sec_image['ID'],
+							'full',
+							false,
+							array(
+								'alt'           => '',
+								'class'         => 'gc-image gc-image__hero-banner',
+								'fetchpriority' => 'high',
+							)
+						);
 						?>
 					</div>
 				</div>
