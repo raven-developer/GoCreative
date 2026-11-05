@@ -30,69 +30,83 @@ $opt_add_image   = ! empty( $opt_content['option_add_image'] );
 $sec_image       = $opt_add_image && ! empty( $opt_content['section_image'] ) ? $opt_content['section_image'] : null;
 
 $opt_heading_id = 'hero-banner-heading-' . get_row_index();
-$opt_classes    = trim( 'gc-section gc-height--full gc-width--full gc-section--hero-banner ' . $opt_extra_classes );
+$opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-width--full gc-flex' . $opt_extra_classes );
 ?>
 
 <?php /* Temporary: remove once layouting is done */ ?>
 
 <section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?>>
-	<div class="gc-section--inner-container">
+	<div class="gc-con--inner">
 		<?php if ( !empty( $sec_header ) ): ?>
-		<div class="gc-section--content-block gc-flex gc-flex--col gc-flex--center gc-flex--gap-3 gc-flex--col-6">
+		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-pos--bottom gc-width--half gc-flex gc-color--white">
+			<div class="gc-wrap--inner">
+				<div class="gc-content gc-content--header gc-flex">
+					<div class="gc-content--container">
+						<<?php echo $opt_header_level; ?> id="<?php echo esc_attr( $opt_heading_id ); ?>" class="gc-header--title gc-size--xl">
+							<?php echo esc_html( $sec_header ); ?>
+						</<?php echo $opt_header_level; ?>>
+				
+					</div>
+				</div>
 
-			<div class="gc-section--header-block">
-				<<?php echo $opt_header_level; ?> id="<?php echo esc_attr( $opt_heading_id ); ?>" class="gc-section__header gc-section__title">
-					<?php echo esc_html( $sec_header ); ?>
-				</<?php echo $opt_header_level; ?>>
+				<?php if ( $sec_description ) : ?>
+				<div class="gc-content gc-content--description gc-flex gc-size--m">
+					<div class="gc-content--container">
+						<?php echo wp_kses_post( $sec_description ); ?>
+					</div>
+				</div>
+				<?php endif; ?>
+
+				<?php if ( $sec_buttons ) : ?>
+				<div class="gc-content gc-content--buttons-block gc-flex gc-flex--row">
+					<div class="gc-content--container">
+						<?php foreach ( $sec_buttons as $sec_button ) :
+							if ( empty( $sec_button['section_button_link'] ) || empty( $sec_button['section_button_label'] ) ) {
+								continue;
+							}
+							$opt_new_tab      = ! empty( $sec_button['option_new_tab'] );
+							$opt_button_style = ! empty( $sec_button['button_style'] ) ? $sec_button['button_style'] : 'btn_primary';
+							?>
+							<a
+								class="gc-button <?php echo esc_attr( $opt_button_style ); ?>"
+								href="<?php echo esc_url( $sec_button['section_button_link'] ); ?>"
+								<?php echo $opt_new_tab ? 'target="_blank" rel="noopener noreferrer"' : ''; ?>
+							>
+								<?php echo esc_html( $sec_button['section_button_label'] ); ?>
+								<?php if ( $opt_new_tab ) : ?>
+									<span class="screen-reader-text"><?php esc_html_e( '(opens in a new tab)', 'GoCreative' ); ?></span>
+								<?php endif; ?>
+							</a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+				<?php endif; ?>
+
 			</div>
-
-			<?php if ( $sec_description ) : ?>
-			<div class="gc-section--description-block">
-				<?php echo wp_kses_post( $sec_description ); ?>
-			</div>
-			<?php endif; ?>
-
-			<?php if ( $sec_buttons ) : ?>
-			<div class="gc-section--buttons-block gc-flex gc-flex--row gc-flex--gap-1">
-				<?php foreach ( $sec_buttons as $sec_button ) :
-					if ( empty( $sec_button['section_button_link'] ) || empty( $sec_button['section_button_label'] ) ) {
-						continue;
-					}
-					$opt_new_tab      = ! empty( $sec_button['option_new_tab'] );
-					$opt_button_style = ! empty( $sec_button['button_style'] ) ? $sec_button['button_style'] : 'btn_primary';
-					?>
-					<a
-						class="gc-button <?php echo esc_attr( $opt_button_style ); ?>"
-						href="<?php echo esc_url( $sec_button['section_button_link'] ); ?>"
-						<?php echo $opt_new_tab ? 'target="_blank" rel="noopener noreferrer"' : ''; ?>
-					>
-						<?php echo esc_html( $sec_button['section_button_label'] ); ?>
-						<?php if ( $opt_new_tab ) : ?>
-							<span class="screen-reader-text"><?php esc_html_e( '(opens in a new tab)', 'GoCreative' ); ?></span>
-						<?php endif; ?>
-					</a>
-				<?php endforeach; ?>
-			</div>
-			<?php endif; ?>
-
 		</div>
 		<?php endif; ?>
 
 		<?php if ( $sec_image ) : ?>
-		<div class="gc-section--image-block">
-			<?php
-			echo wp_get_attachment_image(
-					$sec_image['ID'],
-					'full',
-					false,
-					array(
-						'alt'           => '',
-						'class'         => 'gc-section__image gc-section__image--hero-banner',
-						'fetchpriority' => 'high',
-					)
-				);
-			?>
+		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-image gc-flex">
+			<div class="gc-wrap--inner">
+				<div class="gc-content gc-content--image gc-image--default gc-flex">
+					<div class="gc-content--container">
+						<?php
+						echo wp_get_attachment_image(
+								$sec_image['ID'],
+								'full',
+								false,
+								array(
+									'alt'           => '',
+									'class'         => 'gc-image  gc-image__hero-banner',
+									'fetchpriority' => 'high',
+								)
+							);
+						?>
+					</div>
+				</div>
+			</div>
 		</div>
-	<?php endif; ?>
+		<?php endif; ?>
 	</div>
 </section>

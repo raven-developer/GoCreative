@@ -5,13 +5,17 @@
     border-radius: 10px;
 }
 
-.site-primary-header-wrap {
-    padding: 1rem 0 !important;
+.ast-site-identity {
+    padding: 0;
+}
+
+#masthead .site-primary-header-wrap {
+    padding: 40px 0;
 }
 
 @media (min-width: 768px) {
     header .main-header-bar-wrap {
-        max-width: 90%;
+        max-width: 90vw;
         margin: 0 auto;
     }
 }

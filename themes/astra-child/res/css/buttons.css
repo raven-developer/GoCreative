@@ -11,6 +11,7 @@
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 12px;
+    text-align: center;
 }
 
 .gc-button.btn_primary {

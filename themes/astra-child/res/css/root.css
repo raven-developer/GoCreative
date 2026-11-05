@@ -18,3 +18,63 @@
     --gc-font--header: 'Syne', sans-serif;
     --gc-font--paragraph: 'Figtree',sans-serif;
 }
+
+.gc-image--default {
+    --object-fit: cover;
+    --object-position: center;
+}
+
+.gc-section--wrapper {
+    --display: flex;
+    --flex-direction: column;
+    --justify-content: flex-start;
+    --gap: 0;
+    --content-width: 100%
+}
+
+.gc-section {
+    --padding-block: clamp(5rem, 2.7rem + 9.5vw, 11.25rem);
+}
+
+.gc-section:has( +.gc-section) {
+    --padding-block: clamp(5rem, 2.7rem + 9.5vw, 11.25rem) 0;
+}
+
+.gc-section--wrapper {
+    --padding: 1rem;
+}
+
+.gc-section--wrapper-content-text {
+    --display: flex;
+    --flex-direction: column;
+    --gap: 26px;
+}
+
+.gc-content--buttons-block {
+    --gap: 12px;
+}
+
+@media (min-width: 768px) {
+    .gc-width--full {
+        --content-width: 90vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .gc-width--half {
+        --content-width: 50vw;
+    }
+}
+
+/** =====================
+ * Flexbox Utilities
+ =======================*/
+.gc-flex {
+  --display: flex;
+  display: var(--display);
+}
+
+.gc-flex--row {
+  --flex-direction: row;
+  flex-direction: var(--flex-direction);
+}
