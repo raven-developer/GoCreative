@@ -105,6 +105,24 @@ function child_enqueue_styles() {
 		gc_file_version( CHILD_THEME_STYLE_DIR . '/style-herobanner.css' ),
 		'all'
 	);
+
+	// Enqueue Logo Carousel Stylesheet
+	wp_enqueue_style(
+		'astra-logocarousel-custom-style',
+		CHILD_THEME_STYLE_PATH . '/style-logocarousel.css',
+		array( 'astra-root-custom-style' ),
+		gc_file_version( CHILD_THEME_STYLE_DIR . '/style-logocarousel.css' ),
+		'all'
+	);
+
+	// Enqueue Swiper Stylesheet
+	wp_enqueue_style(
+		'swiper-style',
+		'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+		array(),
+		null,
+		'all'
+	);
 }
 
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
@@ -123,6 +141,27 @@ function child_enqueue_scripts() {
 			'in_footer' => true,
 			'strategy'  => 'defer',
 		)
+	);
+
+	wp_enqueue_script(
+		'custom-carousel-script',
+		CHILD_THEME_SCRIPT_PATH . '/script-carousel.js',
+		array(),
+		gc_file_version( CHILD_THEME_SCRIPT_DIR . '/script-carousel.js' ),
+		array(
+			'in_footer' => true,
+			'strategy'  => 'defer',
+		)
+	);
+
+	wp_enqueue_script(
+		'swiper-script',
+		'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+		null,
+		array(
+			'in_footer' => true,
+			'strategy'  => 'defer',
+ 		)
 	);
 }
 add_action( 'wp_enqueue_scripts', 'child_enqueue_scripts', 15 );

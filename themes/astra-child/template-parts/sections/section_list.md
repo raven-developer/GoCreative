@@ -30,3 +30,12 @@ locations : Locations and Contact Details
 # Section Header Level
 h2 : H2
 h3 : H3
+
+
+# var_dump
+<?php /* Temporary: remove once layouting is done */ ?>
+<pre><?php echo esc_html( print_r( array(
+	'general' => $opt_general,
+	'content' => $opt_content,
+    'section' => $TEMPLATE_FIELD,
+), true ) ); ?></pre>

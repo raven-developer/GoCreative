@@ -1,0 +1,35 @@
+.gc-section--logo-carousel {
+    --gap: calc(60px - 2rem);
+}
+
+.gc-content--carousel-block:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.gc-slider.swiper .swiper-wrapper {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.gc-slider.swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gc-slider.swiper .gc-carousel--item {
+    width: 320px;
+    height: 95px;
+    padding: 12px;
+    border: 1px solid var(--gc-color--border);
+    border-radius: 8px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.gc-carousel--item .gc-image {
+    max-height: 40px;
+    max-width: 150px;
+}

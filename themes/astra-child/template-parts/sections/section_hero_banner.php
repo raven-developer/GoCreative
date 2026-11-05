@@ -23,7 +23,7 @@ $opt_add_image   = ! empty( $opt_content['option_add_image'] );
 $sec_image       = $opt_add_image && ! empty( $opt_content['section_image'] ) ? $opt_content['section_image'] : null;
 
 $opt_heading_id = 'hero-banner-heading-' . get_row_index();
-$opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-width--full gc-flex ' . $opt_extra_classes );
+$opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-width--full gc-flex gc-flex--row' . $opt_extra_classes );
 ?>
 
 <section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?>>

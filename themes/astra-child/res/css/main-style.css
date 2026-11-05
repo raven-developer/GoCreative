@@ -23,6 +23,8 @@
  =======================*/
 .gc-con--inner {
     display: var(--display);
+    flex-direction: var(--flex-direction);
+    gap: var(--gap);
     align-self: auto;
     flex-basis: auto;
     flex-grow: 1;
@@ -32,13 +34,14 @@
     padding-block: var(--padding-block);
     padding-inline: var(--padding-inline);
     margin: 0 auto;
-    max-width: var(--content-width);
-    width: 100%;
+    width: var(--content-width);
+    max-width: 1920px;
 }
 
 .gc-content--container {
     display: var(--display);
     flex-direction: var(--flex-direction);
+    justify-content: var(--justify-content);
     gap: var(--gap);
     align-self: auto;
     flex-basis: auto;
@@ -55,6 +58,7 @@
     gap: var(--gap);
     padding: var(--padding);
     width: var(--content-width);
+    max-width: var(--max-width);
     height: 100%;
 }
 
@@ -62,6 +66,15 @@
     .gc-content--buttons-block.gc-flex--row {
         --flex-direction: column;
     }
+}
+
+.gc-section--wrapper.gc-align--center,
+.gc-align--center {
+    text-align: center;
+    place-items: center;
+    place-content: center;
+    --justify-content: center;
+    --align-items: center;
 }
 
 /** =====================
