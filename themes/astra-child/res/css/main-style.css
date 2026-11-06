@@ -2,7 +2,7 @@
  * Height and Width Utilities
  =======================*/
 .gc-height--full {
-    min-height: 100vh;
+    min-height: 90dvh;
 }
 
 /** =====================
@@ -11,6 +11,13 @@
 .gc-section {
     position: relative;
     overflow: hidden;
+    background: var(--gc-background);
+}
+
+.gc-section--bg-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .gc-section--wrapper {
@@ -35,7 +42,7 @@
     padding-inline: var(--padding-inline);
     margin: 0 auto;
     width: var(--content-width);
-    max-width: 1920px;
+    max-width: var(--max-width);
 }
 
 .gc-content--container {

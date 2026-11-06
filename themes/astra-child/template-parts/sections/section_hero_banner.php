@@ -23,10 +23,10 @@ $opt_add_image   = ! empty( $opt_content['option_add_image'] );
 $sec_image       = $opt_add_image && ! empty( $opt_content['section_image'] ) ? $opt_content['section_image'] : null;
 
 $opt_heading_id = 'hero-banner-heading-' . get_row_index();
-$opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-width--full gc-flex gc-flex--row' . $opt_extra_classes );
+$opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-width--full gc-section--bg-img gc-flex gc-flex--row' . $opt_extra_classes );
 ?>
 
-<section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?>>
+<section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?> style="--gc-background: url('<?php echo esc_url( $sec_image['url'] ); ?>');">>
 	<div class="gc-con--inner">
 		<?php if ( ! empty( $sec_header ) ): ?>
 		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-pos--bottom gc-width--half gc-flex gc-color--white">
@@ -72,29 +72,6 @@ $opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-w
 				</div>
 				<?php endif; ?>
 
-			</div>
-		</div>
-		<?php endif; ?>
-
-		<?php if ( $sec_image ) : ?>
-		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-image gc-flex">
-			<div class="gc-wrap--inner">
-				<div class="gc-content gc-content--image gc-image--default gc-flex">
-					<div class="gc-content--container">
-						<?php
-						echo wp_get_attachment_image(
-							$sec_image['ID'],
-							'full',
-							false,
-							array(
-								'alt'           => '',
-								'class'         => 'gc-image gc-image__hero-banner',
-								'fetchpriority' => 'high',
-							)
-						);
-						?>
-					</div>
-				</div>
 			</div>
 		</div>
 		<?php endif; ?>

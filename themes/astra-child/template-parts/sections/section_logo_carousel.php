@@ -25,7 +25,7 @@ $sec_gallery      = get_sub_field( 'section_logo_carousel' );
 $sec_logo_gallery = ! empty( $sec_gallery['section_logo_images'] ) ? $sec_gallery['section_logo_images'] : array();
 
 $opt_heading_id = 'logo-carousel-heading-' . get_row_index();
-$opt_classes    = trim( 'gc-section gc-section--logo-carousel gc-height--default gc-width--full gc-flex gc-flex--col' . $opt_extra_classes );
+$opt_classes    = trim( 'gc-section gc-section--logo-carousel gc-height--default gc-width--full gc-section--bg-default gc-flex gc-flex--col' . $opt_extra_classes );
 ?>
 
 <section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?>>
@@ -94,6 +94,8 @@ $opt_classes    = trim( 'gc-section gc-section--logo-carousel gc-height--default
                                 </li>
                             <?php endforeach; ?>
                         </ul>
+						<div class="gc-slider--overlay gc-slider--overlay-left"></div>
+						<div class="gc-slider--overlay gc-slider--overlay-right"></div>
                     </div>
 
                     <div class="gc-content gc-content--carousel-block gc-slider gc-slider--ltr swiper">
@@ -109,6 +111,8 @@ $opt_classes    = trim( 'gc-section gc-section--logo-carousel gc-height--default
                                 </li>
                             <?php endforeach; ?>
                         </ul>
+						<div class="gc-slider--overlay gc-slider--overlay-left"></div>
+						<div class="gc-slider--overlay gc-slider--overlay-right"></div>
                     </div>
 
                 </div>

@@ -33,3 +33,30 @@
     max-height: 40px;
     max-width: 150px;
 }
+
+.gc-slider--overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    aspect-ratio: 3 / 2;
+    z-index: 1
+}
+
+.gc-slider--overlay-left {
+    left: 0;
+    background: linear-gradient(90deg, #f0efe7 0%, #f0efe700 90%);
+}
+
+.gc-slider--overlay-right {
+    right: 0;
+    background: linear-gradient(270deg, #f0efe7 0%, #f0efe700 90%);
+}
+
+@media (max-width: 767px) {
+    .gc-slider.swiper .gc-carousel--item {
+        width: 90px;
+        height: 25px;
+        padding: 24px 40px;
+    }
+}

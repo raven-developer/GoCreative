@@ -24,6 +24,14 @@
     --object-position: center;
 }
 
+.gc-section--bg-none {
+    --gc-background: unset;
+}
+
+.gc-section--bg-default {
+    --gc-background: var(--gc-color--white);
+}
+
 .gc-image--contain {
     --object-fit: contain;
     --object-position: center;
@@ -66,28 +74,34 @@
     --gap: 12px;
 }
 
+.gc-section {
+    --max-width: 100%;
+    --content-width: 100%;
+}
+
 @media (min-width: 768px) {
+    .gc-section {
+        --max-width: min(90vw, 1920px);
+    }
+
     .gc-width--default {
-        --content-width: 1440px;
+        --content-width: min(1440px, 100%);
     }
 
     .gc-width--full {
-        --content-width: 90vw;
-    }
-}
-
-@media (min-width: 992px) {
-    .gc-width--default {
         --content-width: 100%;
-        --max-width: 100%;
     }
 
     .gc-width--half {
-        --content-width: 50vw;
-        --max-width: 50%;
+        --content-width: 100%;
     }
 }
 
+@media (min-width: 1025px) {
+    .gc-width--half {
+        --content-width: 50%;
+    }
+}
 /** =====================
  * Flexbox Utilities
  =======================*/
