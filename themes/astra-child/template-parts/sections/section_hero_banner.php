@@ -11,7 +11,8 @@ $opt_content = get_sub_field( 'option_section_content' );
 
 // Get the values of the general settings
 $opt_extra_classes = ! empty( $opt_general['option_extra_classes'] ) ? $opt_general['option_extra_classes'] : '';
-
+$opt_heading_id = 'hero-banner-heading-' . get_row_index();
+$opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-width--full gc-section--bg-img gc-flex gc-flex--row' . $opt_extra_classes );
 $opt_header_level = 'h1'; // Always use H1 for the hero banner heading
 
 // Get the values of the content settings
@@ -21,12 +22,9 @@ $opt_add_button  = ! empty( $opt_content['option_add_button'] );
 $sec_buttons     = $opt_add_button && ! empty( $opt_content['section_buttons'] ) ? $opt_content['section_buttons'] : array();
 $opt_add_image   = ! empty( $opt_content['option_add_image'] );
 $sec_image       = $opt_add_image && ! empty( $opt_content['section_image'] ) ? $opt_content['section_image'] : null;
-
-$opt_heading_id = 'hero-banner-heading-' . get_row_index();
-$opt_classes    = trim( 'gc-section gc-section--hero-banner gc-height--full gc-width--full gc-section--bg-img gc-flex gc-flex--row' . $opt_extra_classes );
 ?>
 
-<section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?> style="--gc-background: url('<?php echo esc_url( $sec_image['url'] ); ?>');">>
+<section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?> style="--gc-background: url('<?php echo esc_url( $sec_image['url'] ); ?>');">
 	<div class="gc-con--inner">
 		<?php if ( ! empty( $sec_header ) ): ?>
 		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-pos--bottom gc-width--half gc-flex gc-color--white">

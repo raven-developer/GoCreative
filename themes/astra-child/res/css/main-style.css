@@ -2,7 +2,8 @@
  * Height and Width Utilities
  =======================*/
 .gc-height--full {
-    min-height: 90dvh;
+    min-height: 100vh;
+    min-height: 100svh;
 }
 
 /** =====================
@@ -41,8 +42,8 @@
     padding-block: var(--padding-block);
     padding-inline: var(--padding-inline);
     margin: 0 auto;
-    width: var(--content-width);
-    max-width: var(--max-width);
+    width: 100%;
+    max-width: var(--content-width);
 }
 
 .gc-content--container {
@@ -58,6 +59,16 @@
     width: 100%;
 }
 
+.gc-section--wrapper-content {
+    display: var(--display);
+    flex-direction: var(--flex-direction);
+    justify-content: var(--justify-content);
+    gap: var(--gap);
+    height: 100%;
+    width: 100%;
+}
+
+.gc-content--card-wrap,
 .gc-wrap--inner {
     display: var(--display);
     flex-direction: var(--flex-direction);
@@ -84,6 +95,10 @@
     --align-items: center;
 }
 
+.gc-flex--justify__space-between > * {
+    flex: 1;
+}
+
 /** =====================
  * Colors
  =======================*/
@@ -96,7 +111,17 @@
  * Image
  =======================*/
 
-.gc-image {
+.gc-section--image-block {
+    border-radius: 24px;
+    overflow: hidden;
+    max-height: 719px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+}
+
+
+.gc-section__image {
     height: 100%;
     width: 100%;
     object-fit: var(--object-fit);

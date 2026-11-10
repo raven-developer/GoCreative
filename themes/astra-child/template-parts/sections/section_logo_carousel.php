@@ -13,6 +13,8 @@ $opt_content = get_sub_field( 'option_section_content' );
 $opt_extra_classes = ! empty( $opt_general['option_extra_classes'] ) ? $opt_general['option_extra_classes'] : '';
 $opt_header_level  = ! empty( $general['option_header_level'] ) ? $general['option_header_level'] : 'h2';
 $opt_header_level  = in_array( $opt_header_level, array( 'h2', 'h3' ), true ) ? $opt_header_level : 'h2';
+$opt_heading_id    = 'logo-carousel-heading-' . get_row_index();
+$opt_classes       = trim( 'gc-section gc-section--logo-carousel gc-height--default gc-width--full gc-section--bg-default gc-flex gc-flex--col' . $opt_extra_classes );
 
 // Get the values of the content settings
 $sec_header      = isset( $opt_content['section_header'] ) ? $opt_content['section_header'] : '';
@@ -23,9 +25,6 @@ $sec_buttons     = $opt_add_button && ! empty( $opt_content['section_buttons'] )
 // Get the values of the Logo Carousel Group
 $sec_gallery      = get_sub_field( 'section_logo_carousel' );
 $sec_logo_gallery = ! empty( $sec_gallery['section_logo_images'] ) ? $sec_gallery['section_logo_images'] : array();
-
-$opt_heading_id = 'logo-carousel-heading-' . get_row_index();
-$opt_classes    = trim( 'gc-section gc-section--logo-carousel gc-height--default gc-width--full gc-section--bg-default gc-flex gc-flex--col' . $opt_extra_classes );
 ?>
 
 <section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?>>
@@ -42,7 +41,7 @@ $opt_classes    = trim( 'gc-section gc-section--logo-carousel gc-height--default
 				</div>
 
 				<?php if ( $sec_description ) : ?>
-				<div class="gc-content gc-content--description gc-flex gc-size--m">
+				<div class="gc-content gc-content--description gc-flex">
 					<div class="gc-content--container">
 						<?php echo wp_kses_post( $sec_description ); ?>
 					</div>

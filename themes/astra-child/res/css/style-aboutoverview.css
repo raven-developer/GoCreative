@@ -1,0 +1,15 @@
+.gc-section--about-overview {
+    --gap: clamp(2.741rem, -1.0615rem + 7.4294vw, 5.625rem)
+}
+
+.gc-section--about-overview .gc-section--wrapper-content {
+    gap: clamp(12px, -12.6413rem + 27.935vw, 200px)
+}
+
+.gc-content--card-wrap {
+    --padding: 0;
+    --content-width: 100%;
+    --max-width: 100%;
+}
+
+

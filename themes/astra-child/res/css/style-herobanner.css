@@ -3,10 +3,6 @@
     align-items: center;
 }
 
-.gc-section--hero-banner .gc-pos--bottom {
-    align-self: flex-end;
-}
-
 .gc-section--hero-banner .gc-section--wrapper-content-image {
     --padding: 0;
     --flex-direction: row;

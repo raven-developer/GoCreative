@@ -97,24 +97,6 @@ function child_enqueue_styles() {
 		'all'
 	);
 
-	// Enqueue Hero Banner Stylesheet
-	wp_enqueue_style(
-		'astra-herobanner-custom-style',
-		CHILD_THEME_STYLE_PATH . '/style-herobanner.css',
-		array( 'astra-root-custom-style' ),
-		gc_file_version( CHILD_THEME_STYLE_DIR . '/style-herobanner.css' ),
-		'all'
-	);
-
-	// Enqueue Logo Carousel Stylesheet
-	wp_enqueue_style(
-		'astra-logocarousel-custom-style',
-		CHILD_THEME_STYLE_PATH . '/style-logocarousel.css',
-		array( 'astra-root-custom-style' ),
-		gc_file_version( CHILD_THEME_STYLE_DIR . '/style-logocarousel.css' ),
-		'all'
-	);
-
 	// Enqueue Swiper Stylesheet
 	wp_enqueue_style(
 		'swiper-style',
@@ -123,6 +105,25 @@ function child_enqueue_styles() {
 		null,
 		'all'
 	);
+
+	$section_styles = array(
+		'herobanner',
+		'logocarousel',
+		'aboutoverview',
+		'cards',
+	);
+
+	foreach ( $section_styles as $name ) {
+		$file = "/style-{$name}.css";
+
+		wp_enqueue_style(
+			"astra-{$name}-custom-style",
+			CHILD_THEME_STYLE_PATH . $file,
+			array( 'astra-root-custom-style' ),
+			gc_file_version( CHILD_THEME_STYLE_DIR . $file ),
+			'all'
+		);
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );

@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: For Pages Template
- * DescriptionL A custom page template for pages.
+ * The template for displaying all pages.
+ * 
  */
 
 defined( 'ABSPATH' ) || exit;
