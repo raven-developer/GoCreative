@@ -47,7 +47,10 @@ Pages that use the template file `template-page.php` are made from a repeater fi
 
 Available section layouts:
 
-**Soon to be added
+- hero_banner : Full Height Page Banner
+- page_header : Page Header
+- logo_carousel : Logo Carousel
+- about_overview : About Overview
 
 The page header always outputs the H1.
 
