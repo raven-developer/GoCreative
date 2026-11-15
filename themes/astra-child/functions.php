@@ -110,6 +110,7 @@ function child_enqueue_styles() {
 		'herobanner',
 		'logocarousel',
 		'aboutoverview',
+		'servicelist',
 		'cards',
 	);
 

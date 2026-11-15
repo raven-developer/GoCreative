@@ -46,3 +46,41 @@
     font-size: var(--font-size);
     color: var(--color);
 }
+
+.gc-card--image-block {
+    border-radius: calc(var(--border-radius) - var(--padding));
+    overflow: hidden;
+}
+
+/* Services Cards */
+.gc-card--services { 
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    --flex-direction: row;
+    --gap: 32px;
+    --padding: 20px;    
+    --border-radius: 28px;
+    --border-color: none;
+    --border-inline-width: none;
+    --border-block-width: none;
+    --background-color: var(--gc-color--bg-alternate);
+}
+
+.gc-card--services:nth-child(odd) {
+    --background-color: #fff;
+}
+
+.gc-card--services .gc-card--image-container,
+.gc-card--services .gc-card--content-container {
+    flex: 1 1 100%
+}
+
+.gc-card--services .gc-card--content-container {
+    --flex-direction: column;
+    --gap: 20px;
+    gap: 40px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 20px;
+}

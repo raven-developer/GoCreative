@@ -25,11 +25,11 @@ $opt_add_image   = ! empty( $opt_content['option_add_image'] );
 $sec_image       = $opt_add_image && ! empty( $opt_content['section_image'] ) ? $opt_content['section_image'] : null;
 
 // Get the values of the Key Point Items
-$sec_about_overview        = get_sub_field('section_about_overview');
-$opt_about_header_level    = ! empty( $sec_about_overview['option_heading_level'] ) ? $sec_about_overview['option_heading_level'] : 'h3';
-$opt_about_header_level    = in_array( $opt_about_header_level, array( 'h3', 'h4', 'h5', 'h6', 'p' ), true ) ? $opt_about_header_level : 'h3';
+$opt_about_overview        = get_sub_field('section_about_overview');
+$opt_item_header_level    = ! empty( $opt_about_overview['option_heading_level'] ) ? $opt_about_overview['option_heading_level'] : 'h3';
+$opt_item_header_level    = in_array( $opt_item_header_level, array( 'h3', 'h4', 'h5', 'h6', 'p' ), true ) ? $opt_item_header_level : 'h3';
 $opt_item_heading_id       = 'about-overview-heading-' . get_row_index();
-$sec_keypoint_items        = ! empty ( $sec_about_overview['section_keypoint_items']) ?  $sec_about_overview['section_keypoint_items'] : array();
+$sec_keypoint_items        = ! empty ( $opt_about_overview['section_keypoint_items']) ?  $opt_about_overview['section_keypoint_items'] : array();
 ?>
 
 <section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?>>
@@ -93,13 +93,13 @@ $sec_keypoint_items        = ! empty ( $sec_about_overview['section_keypoint_ite
 						<div class="gc-content__card gc-card gc-card--text-only">
 							<div class="gc-card--inner-wrap">
 								<div class="gc-card--header-container">
-									<<?php echo tag_escape($opt_about_header_level); ?> id="<?php echo esc_attr( $opt_item_heading_id ); ?>" class="gc-card__title gc-size--default">
+									<<?php echo tag_escape($opt_item_header_level); ?> id="<?php echo esc_attr( $opt_item_heading_id ); ?>" class="gc-card__title gc-size--default">
 										<?php echo esc_html( $item_keypoint_title ); ?>
-									</<?php echo tag_escape($opt_about_header_level); ?>>
+									</<?php echo tag_escape($opt_item_header_level); ?>>
 								</div>
 
 								<?php if ( $item_keypoint_description ) : ?>
-								<div class="gc-card--header-container">
+								<div class="gc-card--description-container">
 									<?php echo wp_kses_post( $item_keypoint_description ); ?>
 								</div>
 								<?php endif; ?>

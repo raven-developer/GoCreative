@@ -48,7 +48,7 @@ function initLogoSlider(container, index) {
     wrapper.children[originalSlides.length].offsetLeft -
     originalSlides[0].offsetLeft;
 
-  console.log("logoSwiper", index, direction, "cycle width:", cycleWidth);
+  // console.log("logoSwiper", index, direction, "cycle width:", cycleWidth);
 
   if (cycleWidth <= 0 || reduceMotion) return;
 

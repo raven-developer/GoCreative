@@ -127,3 +127,13 @@
     object-fit: var(--object-fit);
     object-position: var(--object-position);
 }
+
+/** =====================
+ * Card Count
+ =======================*/
+ 
+.gc-count {
+    font-family: "Syne", sans-serif;
+    font-size: 14px;
+    opacity: 0.7;
+}

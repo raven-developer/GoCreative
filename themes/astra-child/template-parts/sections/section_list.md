@@ -4,6 +4,7 @@ hero_banner : Full Height Page Banner
 page_header : Page Header
 logo_carousel : Logo Carousel
 about_overview : About Overview
+services_section : Services Cards
 
 # Section Header Level
 h2 : H2

@@ -1,0 +1,7 @@
+.gc-services--track {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    will-change: transform;
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Section template: Full Height Page Banner (value: hero_banner)
+ * Section template: Logo Carousel (value: logo_carousel)
  *
  * Runs inside the "contents" repeater loop, so get_sub_field() is
  * already pointed at the current row.
