@@ -93,6 +93,10 @@
     justify-content: flex-end;
 }
 
+.gc-section--wrapper {
+    --content-width: 100%;
+}
+
 @media (min-width: 768px) {
     .gc-section {
         --max-width: min(90vw, 1920px);

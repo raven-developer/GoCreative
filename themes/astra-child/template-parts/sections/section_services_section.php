@@ -15,7 +15,7 @@ $opt_extra_classes = ! empty($opt_general['option_extra_classes']) ? $opt_genera
 $opt_header_level  = ! empty($general['option_header_level']) ? $general['option_header_level'] : 'h2';
 $opt_header_level  = in_array($opt_header_level, array('h2', 'h3'), true) ? $opt_header_level : 'h2';
 $opt_heading_id = 'services-heading-' . get_row_index();
-$opt_classes    = trim('gc-section gc-section--services gc-height--default gc-width--default gc-section--bg-default gc-flex gc-flex--col' . $opt_extra_classes);
+$opt_classes    = trim('gc-section gc-section--services gc-height--default gc-width--full-l gc-section--bg-default gc-flex gc-flex--col' . $opt_extra_classes);
 
 // Get the values of the content settings
 $sec_header      = isset($opt_content['section_header']) ? $opt_content['section_header'] : '';
@@ -35,7 +35,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
 <section class="<?php echo esc_attr($opt_classes); ?>" <?php echo $sec_header ? ' aria-labelledby="' . esc_attr($opt_heading_id) . '"' : ''; ?>>
     <div class="gc-con--inner">
         <?php if (! empty($sec_header)): ?>
-            <div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-flex gc-flex--row gc-flex--justify__space-between">
+            <div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-width--default gc-flex gc-flex--row gc-flex--justify__space-between">
                 <div class="gc-wrap--inner gc-content--left">
                     <div class="gc-content gc-content--header gc-flex">
                         <div class="gc-content--container">
@@ -111,7 +111,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
         <?php endif; ?>
 
         <?php if (! empty($sec_services_items)): ?>
-            <div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-services-list gc-flex gc-flex--row">
+            <div class="gc-section--wrapper gc-section--wrapper-content gc-width--full gc-section--content-services-list gc-flex gc-flex--row">
                 <div class="gc-wrap--inner">
                     <div class="gc-services--rail">
                         <div class="gc-services--sticky_rail">
@@ -123,7 +123,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
                                     $item_service_description    = isset($services_item['service_description']) ? $services_item['service_description'] : '';
                                     $item_service_button_label   = isset($services_item['service_button_label']) ? $services_item['service_button_label'] : '';
                                     $item_service_button_link    = isset($services_item['service_button_link']) ? $services_item['service_button_link'] : '';
-                                    $item_service_button_new_tab = isset($services_item['service_button_new_tab']);
+                                    $item_service_button_new_tab = ! empty($services_item['service_button_new_tab']);
                                     $item_service_heading_id     = 'gc-card--services-' . uniqid();
                                     $item_service_button_style   = isset($services_item['service_button_style']) ? $services_item['service_button_style'] : 'btn_primary';;
 
@@ -134,7 +134,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
                                     <?php if ($item_service_title || $item_service_image) : ?>
                                         <article class="gc-services__item gc-services--track-item gc-card gc-card--services <?= esc_attr($item_service_heading_id) ?>">
                                             <div class="gc-card--inner-wrap">
-                                                <div class="gc-card--image-container">
+                                                <div class="gc-card--image-container gc-flex">
                                                     <div class="gc-content gc-content--image gc-flex">
                                                         <figure class="gc-card--image-block gc-image--default">
 
@@ -145,7 +145,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
                                                                 false,
                                                                 array(
                                                                     'alt'           => '',
-                                                                    'class'         => 'gc-card__image gc-section__image--hero-banner',
+                                                                    'class'         => 'gc-card__image',
                                                                     'loading'       => 'lazy'
                                                                 )
                                                             );

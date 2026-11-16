@@ -47,9 +47,17 @@
     color: var(--color);
 }
 
+.gc-card--image-container,
 .gc-card--image-block {
+    display: var(--display);
     border-radius: calc(var(--border-radius) - var(--padding));
+    height: 100%;
+    width: 100%;
     overflow: hidden;
+}
+
+.gc-card--description-container p:last-child {
+    margin-bottom: 0;
 }
 
 /* Services Cards */
@@ -73,7 +81,7 @@
 
 .gc-card--services .gc-card--image-container,
 .gc-card--services .gc-card--content-container {
-    flex: 1 1 100%
+    flex: 1;
 }
 
 .gc-card--services .gc-card--content-container {
@@ -83,4 +91,16 @@
     flex-direction: column;
     justify-content: space-between;
     padding-block: 20px;
+}
+
+@media (max-width: 767px) {
+    .gc-card--services {
+        --flex-direction: column;
+    }
+
+    .gc-card--services .gc-card--content-container {
+        --gap: 12px; /* Content Spacing */
+        padding: 0;
+        gap: 24px; /* Content to Button Spacing */
+    }
 }

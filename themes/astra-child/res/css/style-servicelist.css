@@ -1,7 +1,83 @@
-.gc-services--track {
-    width: 100%;
+.gc-width--full-l {
+    --padding: 0;
+    --content-width: 1920px;
+}
+
+.gc-section--content-services-list > .gc-wrap--inner {
+    --track-padding-inline: calc(
+        (min(100%, 1920px) - min(90%, 1440px)) / 2
+    );
+
+    --card-height: min(100vh, calc(100vh - 160px));
+    --card-min-height: 430px;
+}
+
+.gc-services--rail {
+    display: block;
+    width: 100vw;
+    /* margin-left: calc(50% - 50vw); */
+    position: relative;
+    /* height is set by the JS */
+}
+
+.gc-section--services,
+.gc-section--services .gc-con--inner {
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+}
+
+body.admin-bar .gc-services--sticky_rail {
+    top: calc(80px + 32px);
+}
+
+.gc-services--sticky_rail {
+    width: 100vw;
+    height: var(--card-height);
+    min-height: var(--card-min-height);
+
+    position: sticky;
+    top: 80px;
+
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.gc-services--track {
+    display: flex;
+    width: max-content;
     gap: 16px;
+    padding-inline: var(--track-padding-inline);
     will-change: transform;
+}
+
+.gc-services--track-item {
+    --card-width: min(calc(90vw - 2rem), calc(1440px - 2rem));
+    
+    flex: 0 0 var(--card-width);
+    width: var(--card-width);
+    height: var(--card-height);
+    min-height: var(--card-min-height);
+}
+
+@media (max-width: 767px) {
+    .gc-services--track {
+        --track-padding-inline: 0;
+    }
+
+    .gc-services--track {
+        flex-direction: column;
+    }
+
+    .gc-services--track-item {
+        --card-width: 100%;
+
+        flex: 1;
+    }
+
+    .gc-section--services .gc-section--wrapper-content-text {
+        --gap: 0;
+    }
 }
