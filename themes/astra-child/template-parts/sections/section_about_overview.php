@@ -35,7 +35,7 @@ $sec_keypoint_items        = ! empty ( $opt_about_overview['section_keypoint_ite
 <section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?>>
 	<div class="gc-con--inner">
 		<?php if ( ! empty( $sec_header ) ): ?>
-		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-flex gc-flex--row<?= $sec_keypoint_items ? ' gc-flex--justify__space-between' : ''; ?>"">
+		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--content-header gc-flex gc-flex--row<?= $sec_keypoint_items ? ' gc-flex--justify__space-between' : ''; ?>"">
 			<div class="gc-wrap--inner<?= $sec_keypoint_items ? ' gc-content--left' : ''; ?>">
 				<div class="gc-content gc-content--header gc-flex">
 					<div class="gc-content--container">
@@ -142,7 +142,7 @@ $sec_keypoint_items        = ! empty ( $opt_about_overview['section_keypoint_ite
 		<?php endif; ?>
 
 		<?php if ( ! empty( $sec_image ) ): ?>
-		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-image gc-flex gc-flex--row">
+		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--content-image gc-flex gc-flex--row">
 			<div class="gc-wrap--inner">
 				<div class="gc-content gc-content--image gc-flex">
 					<figure class="gc-section--image-block gc-image--default">

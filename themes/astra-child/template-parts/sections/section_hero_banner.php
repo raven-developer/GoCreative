@@ -27,7 +27,7 @@ $sec_image       = $opt_add_image && ! empty( $opt_content['section_image'] ) ? 
 <section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?> style="--gc-background: url('<?php echo esc_url( $sec_image['url'] ); ?>');">
 	<div class="gc-con--inner">
 		<?php if ( ! empty( $sec_header ) ): ?>
-		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-pos--bottom gc-width--half gc-flex gc-color--white">
+		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--content-header gc-pos--bottom gc-width--half gc-flex gc-color--white">
 			<div class="gc-wrap--inner">
 				<div class="gc-content gc-content--header gc-flex">
 					<div class="gc-content--container">

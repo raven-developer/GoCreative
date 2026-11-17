@@ -1,3 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /** =====================
  * Height and Width Utilities
  =======================*/
@@ -105,10 +115,13 @@
     flex: 1;
 }
 
-.gc-sticky {
-    position: sticky;
-    top: 110px;
+@media (min-width: 768px) {
+    .gc-sticky {
+        position: sticky;
+        top: 110px;
+    }
 }
+
 /** =====================
  * Colors
  =======================*/

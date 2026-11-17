@@ -35,7 +35,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
 <section class="<?php echo esc_attr($opt_classes); ?>" <?php echo $sec_header ? ' aria-labelledby="' . esc_attr($opt_heading_id) . '"' : ''; ?>>
     <div class="gc-con--inner">
         <?php if (! empty($sec_header)): ?>
-            <div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-width--default gc-flex gc-flex--row gc-flex--justify__space-between">
+            <div class="gc-section--wrapper gc-section--wrapper-content gc-section--content-header gc-width--default gc-flex gc-flex--row gc-flex--justify__space-between">
                 <div class="gc-wrap--inner gc-content--left">
                     <div class="gc-content gc-content--header gc-flex">
                         <div class="gc-content--container">
@@ -114,7 +114,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
             <div class="gc-section--wrapper gc-section--wrapper-content gc-width--full gc-section--content-services-list gc-flex gc-flex--row">
                 <div class="gc-wrap--inner">
                     <div class="gc-services--rail">
-                        <div class="gc-services--sticky_rail">
+                        <div class="gc-services--sticky_rail gc-sticky">
                             <div class="gc-services--track">
                                 <?php foreach ($sec_services_items as $service_index => $services_item) :
 

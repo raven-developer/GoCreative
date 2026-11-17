@@ -30,7 +30,7 @@ $sec_logo_gallery = ! empty( $sec_gallery['section_logo_images'] ) ? $sec_galler
 <section class="<?php echo esc_attr( $opt_classes ); ?>"<?php echo $sec_header ? ' aria-labelledby="' . esc_attr( $opt_heading_id ) . '"' : ''; ?>>
 	<div class="gc-con--inner">
 		<?php if ( ! empty( $sec_header ) ): ?>
-		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-text gc-width--half gc-flex gc-align--center">
+		<div class="gc-section--wrapper gc-section--wrapper-content gc-section--content-header gc-width--half gc-flex gc-align--center">
 			<div class="gc-wrap--inner">
 				<div class="gc-content gc-content--header gc-flex">
 					<div class="gc-content--container">
@@ -78,7 +78,7 @@ $sec_logo_gallery = ! empty( $sec_gallery['section_logo_images'] ) ? $sec_galler
 		<?php endif; ?>
 
         <?php if ( $sec_logo_gallery ) : ?>
-            <div class="gc-section--wrapper gc-section--wrapper-content gc-section--wrapper-content-image gc-flex">
+            <div class="gc-section--wrapper gc-section--wrapper-content gc-section--content-carousel gc-flex">
 			    <div class="gc-wrap--inner">
                     <div class="gc-content gc-content--carousel-block gc-slider gc-slider--rtl swiper">
                         <ul class="gc-carousel--list swiper-wrapper">

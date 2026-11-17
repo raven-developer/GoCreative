@@ -3,46 +3,9 @@
     --content-width: 1920px;
 }
 
-.gc-section--content-services-list > .gc-wrap--inner {
-    --track-padding-inline: calc(
-        (min(100%, 1920px) - min(90%, 1440px)) / 2
-    );
-
-    --card-height: min(100vh, calc(100vh - 160px));
-    --card-min-height: 430px;
-}
-
 .gc-services--rail {
     display: block;
-    width: 100vw;
-    /* margin-left: calc(50% - 50vw); */
     position: relative;
-    /* height is set by the JS */
-}
-
-.gc-section--services,
-.gc-section--services .gc-con--inner {
-    overflow-x: clip !important;
-    overflow-y: visible !important;
-}
-
-body.admin-bar .gc-services--sticky_rail {
-    top: calc(80px + 32px);
-}
-
-.gc-services--sticky_rail {
-    width: 100vw;
-    height: var(--card-height);
-    min-height: var(--card-min-height);
-
-    position: sticky;
-    top: 80px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    overflow: hidden;
 }
 
 .gc-services--track {
@@ -51,29 +14,73 @@ body.admin-bar .gc-services--sticky_rail {
     gap: 16px;
     padding-inline: var(--track-padding-inline);
     will-change: transform;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 .gc-services--track-item {
-    --card-width: min(calc(90vw - 2rem), calc(1440px - 2rem));
-    
     flex: 0 0 var(--card-width);
     width: var(--card-width);
     height: var(--card-height);
-    min-height: var(--card-min-height);
+    min-height: var(--card-min-height);    
+}
+
+@media (min-width: 768px) {
+
+    .gc-section--content-services-list > .gc-wrap--inner {
+        --track-padding-inline: calc(
+            (min(100%, 1920px) - min(90%, 1440px)) / 2
+        );
+
+        --card-height: min(100vh, calc(100vh - 160px));
+        --card-min-height: 430px;
+    }
+    .gc-services--rail {
+        width: 100vw;
+    }
+
+    .gc-section--services,
+    .gc-section--services .gc-con--inner {
+        overflow-x: clip !important;
+        overflow-y: visible !important;
+    }
+
+    .gc-services--sticky_rail {
+        width: 100vw;
+        height: var(--card-height);
+        min-height: var(--card-min-height);
+        top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    body.admin-bar .gc-services--sticky_rail {
+        top: calc(80px + 32px);
+    }
+
+    .gc-services--track-item {
+        --card-width: min(calc(90vw - 2rem), calc(1440px - 2rem));
+    }
 }
 
 @media (max-width: 767px) {
+    .gc-services--sticky_rail {
+        position: relative;
+    }
+
     .gc-services--track {
         --track-padding-inline: 0;
     }
 
     .gc-services--track {
         flex-direction: column;
+        width: 100%;
     }
 
     .gc-services--track-item {
         --card-width: 100%;
-
+        --card-height: max-content;
         flex: 1;
     }
 
