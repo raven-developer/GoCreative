@@ -5,6 +5,7 @@ page_header : Page Header
 logo_carousel : Logo Carousel
 about_overview : About Overview
 services_section : Services Cards
+approach_section : Approach Section
 
 # Section Header Level
 h2 : H2

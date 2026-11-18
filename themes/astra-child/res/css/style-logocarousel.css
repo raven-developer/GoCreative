@@ -2,6 +2,9 @@
     --gap: calc(60px - 2rem);
 }
 
+.gc-section--content-carousel .gc-wrap--inner {
+    --gap: 0;
+}
 .gc-content--carousel-block:not(:last-child) {
     margin-bottom: 12px;
 }

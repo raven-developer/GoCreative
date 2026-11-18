@@ -1,0 +1,22 @@
+.gc-approach--wrapper.gc-card-wrapper {
+    --item-count: attr(data-item-count type(<number>), 0);
+    --flex-wrap: wrap;
+    --gap: 20px;
+}
+
+.gc-approach--wrapper .gc-content__card {
+    --col-count: calc((100% - (var(--gap) * (var(--item-count) - 1))) / var(--item-count));
+    flex: 1 1 var(--col-count);
+}
+
+@media (max-width: 992px) {
+    .gc-approach--wrapper.gc-card-wrapper {
+        --item-count: 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .gc-approach--wrapper.gc-card-wrapper {
+        --item-count: 1;
+    }
+}

@@ -24,6 +24,10 @@
     min-height: var(--card-min-height);    
 }
 
+.gc-services__item .gc-card--content-block {
+    width: calc(100% - 3rem);
+}
+
 @media (min-width: 768px) {
 
     .gc-section--content-services-list > .gc-wrap--inner {

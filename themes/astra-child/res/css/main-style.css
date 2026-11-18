@@ -164,3 +164,72 @@ html {
     font-size: 14px;
     opacity: 0.7;
 }
+
+/** =====================
+ * Card
+ =======================*/
+.gc-card-wrapper {
+    --display: flex;
+    --flex-direction: row;
+    --align-items: stretch;
+    --justify-content: flex-start;
+    --flex-wrap: nowrap;
+    --gap: 20px;
+}
+
+.gc-wrap--inner-card {
+    display: var(--display);
+    flex-direction: var(--flex-direction);
+    align-items: var(--align-items);
+    justify-content: var(--justify-content);
+    flex-wrap: var(--flex-wrap);
+    gap: var(--gap);
+}
+
+.gc-card--inner-wrap {
+    display: var(--display);
+    flex-direction: var(--flex-direction);
+    align-items: var(--align-items);
+    justify-content: var(--justify-content);
+    flex-wrap: var(--flex-wrap);
+    gap: var(--gap);
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-inline-width: var(--border-inline-width);
+    border-block-width: var(--border-block-width);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    width: 100%;
+    height: auto;
+}
+
+.gc-card--header-container p {
+    margin: 0;
+    padding: 0;
+}
+
+.gc-card__title {
+    font-size: var(--font-size);
+    color: var(--color);
+}
+
+.gc-card--image-container,
+.gc-card--image-block {
+    display: var(--display);
+    align-items: var(--align-items);
+    justify-content: var(--justify-content);
+    border-radius: calc(var(--border-radius) - var(--padding));
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gc-card--content-container {
+    flex-direction: var(--flex-direction);
+    gap: var(--content-gap);
+    flex: 1;
+}
+
+.gc-card--description-container p:last-child {
+    margin-bottom: 0;
+}

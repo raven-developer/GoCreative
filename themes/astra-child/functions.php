@@ -112,6 +112,7 @@ function child_enqueue_styles() {
 		'aboutoverview',
 		'servicelist',
 		'cards',
+		'approach'
 	);
 
 	foreach ( $section_styles as $name ) {

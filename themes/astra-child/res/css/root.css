@@ -110,6 +110,7 @@
         --content-width: min(90vw, 1920px);
     }
 
+    .gc-width--third,
     .gc-width--half {
         --content-width: 100%;
     }
@@ -119,6 +120,10 @@
     .gc-width--half {
         --content-width: 50%;
     }
+
+    .gc-width--third {
+        --content-width: calc( 80% - 120px );
+    }
 }
 /** =====================
  * Flexbox Utilities
@@ -126,6 +131,7 @@
 .gc-flex {
   --display: flex;
   display: var(--display);
+  --gap: 20px;
 }
 
 .gc-flex--row {

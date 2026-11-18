@@ -1,6 +1,9 @@
 .gc-card {
     --display: flex;
     --flex-direction: column;
+    --align-items: flex-start;
+    --justify-content: flex-start;
+    --flex-wrap: nowrap;
     --gap: 12px;
     --border-color: var(--gc-color--border);
     --padding: 24px;
@@ -10,6 +13,8 @@
 
     --font-size: clamp(1.096rem, 0.9801rem + 0.2972vw, 1.25rem);
     --color: var(--gc-color--header);
+
+    display: var(--display);
 }
 
 .gc-card--text-only {
@@ -25,39 +30,14 @@
     --border-block-width: 1px 1px;
 }
 
-.gc-card--inner-wrap {
-    display: var(--display);
-    flex-direction: var(--flex-direction);
-    gap: var(--gap);
-    background: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-inline-width: var(--border-inline-width);
-    border-block-width: var(--border-block-width);
-    border-radius: var(--border-radius);
-    padding: var(--padding);
+.gc-card__bg-white {
+    --background-color: white;
 }
 
-.gc-card--header-container p {
-    margin: 0;
-    padding: 0;
-}
-
-.gc-card__title {
-    font-size: var(--font-size);
-    color: var(--color);
-}
-
-.gc-card--image-container,
-.gc-card--image-block {
-    display: var(--display);
-    border-radius: calc(var(--border-radius) - var(--padding));
-    height: 100%;
+.gc-card--image-container {
+    --align-items: stretch;
     width: 100%;
-    overflow: hidden;
-}
-
-.gc-card--description-container p:last-child {
-    margin-bottom: 0;
+    height: 100%;
 }
 
 /* Services Cards */
@@ -66,6 +46,7 @@
     position: relative;
     overflow: hidden;
     --flex-direction: row;
+    --align-items: stretch;
     --gap: 32px;
     --padding: 20px;    
     --border-radius: 28px;
@@ -79,6 +60,7 @@
     --background-color: #fff;
 }
 
+
 .gc-card--services .gc-card--image-container,
 .gc-card--services .gc-card--content-container {
     flex: 1;
@@ -88,7 +70,6 @@
     --flex-direction: column;
     --gap: 20px;
     gap: 40px;
-    flex-direction: column;
     justify-content: space-between;
     padding-block: 20px;
 }
@@ -109,4 +90,14 @@
         width: 100%;
         flex-direction: column;
     }
+}
+
+/* Icon Text Card */
+.gc-card--icon-text {
+    --border-color: white;
+    --flex-direction: column;
+    --gap: 80px;
+    --content-gap: 20px;
+    --align-items: flex-start;
+    text-align: left;
 }

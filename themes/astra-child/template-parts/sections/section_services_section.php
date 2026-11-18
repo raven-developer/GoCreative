@@ -124,7 +124,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
                                     $item_service_button_label   = isset($services_item['service_button_label']) ? $services_item['service_button_label'] : '';
                                     $item_service_button_link    = isset($services_item['service_button_link']) ? $services_item['service_button_link'] : '';
                                     $item_service_button_new_tab = ! empty($services_item['service_button_new_tab']);
-                                    $item_service_heading_id     = 'gc-card--services-' . uniqid();
+                                    $item_service_heading_id     = 'gc-card--' . uniqid();
                                     $item_service_button_style   = isset($services_item['service_button_style']) ? $services_item['service_button_style'] : 'btn_primary';;
 
                                     $item_service_index          = $service_index + 1;
@@ -132,7 +132,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
                                 ?>
 
                                     <?php if ($item_service_title || $item_service_image) : ?>
-                                        <article class="gc-services__item gc-services--track-item gc-card gc-card--services <?= esc_attr($item_service_heading_id) ?>">
+                                        <article class="gc-services__item gc-services--track-item gc-card gc-card--services <?= esc_attr($item_service_heading_id) ?>" id="<?= esc_attr($item_service_heading_id) ?>">
                                             <div class="gc-card--inner-wrap">
                                                 <div class="gc-card--image-container gc-flex">
                                                     <div class="gc-content gc-content--image gc-flex">
@@ -163,7 +163,7 @@ $sec_services_items       = ! empty($opt_services_list['section_services_items']
                                                             <span class="gc-count gc-count--total"><?= sprintf('%02d', $item_service_total); ?></span>
                                                         </div>
                                                         <div class="gc-card--header-container">
-                                                            <<?php echo tag_escape($opt_item_header_level); ?> id="<?php echo esc_attr($opt_item_heading_id); ?>" class="gc-card__title gc-size--default">
+                                                            <<?php echo tag_escape($opt_item_header_level); ?> id="<?php echo esc_attr($opt_item_heading_id); ?>" class="gc-card__title gc-size--m">
                                                                 <?php echo esc_html($item_service_title); ?>
                                                             </<?php echo tag_escape($opt_item_header_level); ?>>
                                                         </div>
