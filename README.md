@@ -52,6 +52,7 @@ Available section layouts:
 - logo_carousel : Logo Carousel
 - about_overview : About Overview
 - services_section : Services Cards
+- approach_section : Approach Section
 
 The page header always outputs the H1.
 
